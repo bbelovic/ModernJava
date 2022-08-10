@@ -6,7 +6,7 @@ public class Example {
               <head>
               <title>"$TEST"</title>
               </head>
-              </html>                           
+              </html>
           """;
 
     private static final String DELIMITER = "====================";
