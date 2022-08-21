@@ -1,4 +1,4 @@
-package com.oracle.lal.modernjava.sealedtypes;
+package com.oracle.lal.modernjava.sealedtypes.json;
 
 public final class JSONString extends JsonValue {
     private final String value;

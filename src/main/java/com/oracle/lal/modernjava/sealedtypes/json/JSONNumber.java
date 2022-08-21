@@ -1,4 +1,4 @@
-package com.oracle.lal.modernjava.sealedtypes;
+package com.oracle.lal.modernjava.sealedtypes.json;
 
 import java.math.BigDecimal;
 

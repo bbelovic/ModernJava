@@ -2,11 +2,6 @@ package com.oracle.lal.modernjava.textblocks;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Transition between plain old string nad text block
- * Formatting
- * Escaping
- */
 public class ExampleTest {
 
     @Test
