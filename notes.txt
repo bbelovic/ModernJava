@@ -7,3 +7,8 @@ Record
  Record vs plain immutable class
  compact constructor
  Record rules (no inheritance, interfaces etc)
+
+ Enhanced switch
+   fallthrough
+   expression (required exhaustiveness)
+   yield restricted keyword
