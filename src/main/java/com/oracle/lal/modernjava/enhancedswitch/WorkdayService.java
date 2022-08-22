@@ -2,7 +2,7 @@ package com.oracle.lal.modernjava.enhancedswitch;
 
 import java.time.DayOfWeek;
 
-public class WorkdayDetector {
+public class WorkdayService {
     public boolean isWorkdayOldStyle(DayOfWeek dayOfWeek) {
         boolean workday = false;
         switch (dayOfWeek) {

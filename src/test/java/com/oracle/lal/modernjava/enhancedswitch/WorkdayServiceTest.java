@@ -6,8 +6,8 @@ import static java.time.DayOfWeek.MONDAY;
 import static java.time.DayOfWeek.SATURDAY;
 import static org.junit.jupiter.api.Assertions.*;
 
-class WorkdayDetectorTest {
-    private final WorkdayDetector detector = new WorkdayDetector();
+class WorkdayServiceTest {
+    private final WorkdayService detector = new WorkdayService();
     @Test
     public void detectWorkdayTheOldWay() {
         assertFalse(detector.isWorkdayOldStyle(SATURDAY));
