@@ -11,4 +11,18 @@ public class OCPExamTextBlocks {
         return block;
     }
 
+    public String exampleIndentConcat(int i) {
+        var concat = " a\n"
+                + "  b\n"
+                + " c";
+                return  concat.indent(i);
+    }
+
+    public String exampleIndentBlock(int i) {
+        return """
+                a
+                 b
+                c""".indent(i);
+    }
+
 }
