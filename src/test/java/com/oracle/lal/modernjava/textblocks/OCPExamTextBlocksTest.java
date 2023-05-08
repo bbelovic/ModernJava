@@ -45,4 +45,14 @@ class OCPExamTextBlocksTest {
                 """;
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void exampleStripIndent() {
+        String expected = """
+                a
+                 b
+                c""";
+        String actual = underTest.exampleStripIndent();
+        assertEquals(expected, actual);
+    }
 }

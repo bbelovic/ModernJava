@@ -2,20 +2,23 @@ package com.oracle.lal.modernjava.textblocks;
 
 public class OCPExamTextBlocks {
     public String example1() {
-        int x;
-        String block = """
+        return """
                 " some text " + x
                 blabol \
                 blobol 2
                 """;
-        return block;
     }
 
+    private static final String CONCAT = " a\n"
+            + "  b\n"
+            + " c";
+
     public String exampleIndentConcat(int i) {
-        var concat = " a\n"
-                + "  b\n"
-                + " c";
-                return  concat.indent(i);
+        return CONCAT.indent(i);
+    }
+
+    public String exampleStripIndent() {
+        return CONCAT.stripIndent();
     }
 
     public String exampleIndentBlock(int i) {
