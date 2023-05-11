@@ -10,7 +10,7 @@ public class Goosling extends Bird {
 
     public void helpOtherGooseSwim() {
         Bird bird = new Goosling();
-        bird.tweet();
+//        bird.tweet();
         Goosling goosling = new Goosling();
         goosling.tweet();
     }

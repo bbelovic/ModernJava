@@ -6,6 +6,6 @@ public class MethodVisibilityExample1 {
     public static void main(String[] args) {
         Goosling g = new Goosling();
         // not in goosling object
-        g.tweet();
+        //g.tweet();
     }
 }
