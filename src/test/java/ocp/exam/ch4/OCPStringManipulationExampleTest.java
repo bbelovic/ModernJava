@@ -31,7 +31,7 @@ class OCPStringManipulationExampleTest {
 
     @Test
     public void indentExamExample2() {
-        /*
+
         var base = "ewe\nsheep\\t";
         int length = base.length();
         int indent = base.indent(2).length();
@@ -39,7 +39,24 @@ class OCPStringManipulationExampleTest {
 
         var formatted = "%s %s %s".formatted(length, indent, translate);
         System.out.format(formatted);
-        */
+
+        assertEquals(11, base.length());
+        assertEquals("""
+                ewe
+                sheep\\t""", base);
+
+        assertEquals(16, base.indent(2).length());
+        assertEquals("""
+                    ewe
+                    sheep\\t
+                  """, base.indent(2));
+
+        assertEquals(10, base.translateEscapes().length());
+        assertEquals("""
+                ewe
+                sheep\t""", base.translateEscapes());
+
+
     }
 
     @Test
