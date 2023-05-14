@@ -16,6 +16,27 @@ class OCPExamTextBlocksTest {
     }
 
     @Test
+    public void testExample2() {
+        var actual = """
+            squirrel  \s
+            pigeon   \
+            termite""";
+
+        assertEquals("""
+                squirrel   \s
+                pigeon   termite""", actual);
+    }
+
+    @Test public void testExample3() {
+        var colors = """
+                red  \s
+                green\s
+                blue \s
+                """.split("\n");
+        assertArrayEquals(new String [] {"red   ", "green ", "blue  "}, colors);
+    }
+
+    @Test
     public void testExampleIndent() {
         String actual = underTest.exampleIndentBlock(1);
         String expected = """
