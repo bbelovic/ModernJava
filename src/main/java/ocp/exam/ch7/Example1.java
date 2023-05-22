@@ -9,6 +9,9 @@ public interface Example1 {
         return ID;
     }
 
+    // clash with interface method
+    //private static int getId() {return 0;}
+
     private static boolean isDummy() {
         hunt();
         // not allowed
