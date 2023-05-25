@@ -7,11 +7,20 @@
     <groupId>com.oracle.lal.modernjava</groupId>
     <artifactId>modern-java</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ocp.book.chapters</module>
+        <module>lal</module>
+        <module>service.api</module>
+        <module>service.locator</module>
+        <module>service.provider</module>
+    </modules>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
                 <configuration>
                     <source>18</source>
                     <target>18</target>
