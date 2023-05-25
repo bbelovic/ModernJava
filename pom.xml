@@ -13,7 +13,7 @@
         <module>lal</module>
         <module>service.api</module>
         <module>service.locator</module>
-        <module>service.provider</module>
+        <module>service.consumer</module>
     </modules>
     <build>
         <plugins>
