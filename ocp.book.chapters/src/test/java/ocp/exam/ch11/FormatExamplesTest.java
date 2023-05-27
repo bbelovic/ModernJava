@@ -18,6 +18,8 @@ class FormatExamplesTest {
         assertEquals("011.1990", actual);
         actual = examples.format("000000.0000", 200_111.199D);
         assertEquals("200111.1990", actual);
+        actual = examples.format("00.0000", 200_111.199D);
+        assertEquals("200111.1990", actual);
     }
 
 }
