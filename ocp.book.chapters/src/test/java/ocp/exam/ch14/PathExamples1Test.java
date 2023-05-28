@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.StreamSupport;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -103,7 +104,26 @@ class PathExamples1Test {
         assertEquals(Path.of("/home/bbelovic/DEVEL/ModernJava"), path.getParent());
         assertEquals(Path.of("/home/bbelovic/DEVEL"), path.getParent().getParent());
         assertEquals(Path.of("/home/bbelovic"), path.getParent().getParent().getParent());
+    }
 
+    @Test
+    public void testWalk() {
+        var workingDir = "/home/bbelovic/DEVEL/ModernJava/ocp.book.chapters";
+        var subpath = "src/main/resources";
+        var path = Path.of(workingDir, subpath);
+        var actual = countFiles(path, Files::isDirectory, 1);
+        assertEquals(4, actual);
+    }
 
+    private long countFiles(Path start, Predicate<Path> predicate, int depth) {
+        long result;
+        try (var s = Files.walk(start, depth)) {
+            result = s.filter(predicate)
+//                    .peek((p) -> System.out.println(p))
+                    .count();
+        } catch (IOException e) {
+            result = 0;
+        }
+        return result;
     }
 }
