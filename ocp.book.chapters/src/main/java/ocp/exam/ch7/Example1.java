@@ -23,4 +23,16 @@ public interface Example1 {
         var isDummy = isDummy();
         return getId() > getDefaultId();
     }
+
+    private int moo() {
+        return moo();
+    }
+
+    public static void foo() {
+        boo();
+    }
+
+    public static void boo() {
+        foo();
+    }
 }

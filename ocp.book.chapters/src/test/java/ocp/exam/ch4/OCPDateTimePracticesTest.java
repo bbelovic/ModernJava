@@ -11,10 +11,12 @@ class OCPDateTimePracticesTest {
     @Test
     public void testSummerDaylightSavingTime() {
         ZonedDateTime actual = underTest.summerDaylightSavingTime(Duration.ofHours(1));
+
         var date = LocalDate.of(2023, Month.MARCH, 12);
         var time = LocalTime.of(3, 30);
         ZonedDateTime expected = ZonedDateTime.of(date, time, ZoneId.of("US/Eastern"));
         assertEquals(expected, actual);
+        System.out.println(expected.getOffset());
     }
 
     @Test
