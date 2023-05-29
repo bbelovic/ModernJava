@@ -14,6 +14,7 @@
         <module>service.api</module>
         <module>service.locator</module>
         <module>service.consumer</module>
+        <module>service.impl</module>
     </modules>
     <build>
         <plugins>
