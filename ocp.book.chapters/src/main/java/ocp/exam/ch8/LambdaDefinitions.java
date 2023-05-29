@@ -11,14 +11,20 @@ public class LambdaDefinitions {
         this.size = 9;
 
         // not allowed
-        // char end = 'x';
-        //chars = List.of();
+//        int c = 1;
+//         char end = 'x';
+//        chars = List.of();
 
         Predicate<Character> p = c -> {
             char end = 'z'; size = chars.size();
             return start <= c && c <= end;
         };
 
-        int end = 20;
+//        chars = List.of();
+        char end = '#';
+        int c = 4;
+        size = -8;
+//        start = 'x';
+
     }
 }
