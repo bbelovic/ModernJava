@@ -1,6 +1,5 @@
 package ocp.exam.ch9;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -62,5 +61,40 @@ public class CollectionTypesTest {
         assertDoesNotThrow(() -> deque.addFirst(null));
         Deque<String> arrayDeque = new ArrayDeque<>();
         assertThrows(NullPointerException.class, () -> arrayDeque.addFirst(null));
+        arrayDeque.offerFirst("a");
+        arrayDeque.offer("b");
+        arrayDeque.addLast("c");
+        arrayDeque.addLast("d");
+        assertEquals("d", arrayDeque.getLast());
+        assertEquals("a", arrayDeque.peekFirst());
+        assertEquals("a", arrayDeque.peek());
+        assertEquals("d", arrayDeque.peekLast());
+        assertEquals("d", arrayDeque.pollLast());
+
+        arrayDeque.offer("1");
+        arrayDeque.clear();
+
+        assertThrows(NoSuchElementException.class, arrayDeque::getLast);
+        assertThrows(NoSuchElementException.class, arrayDeque::getFirst);
+        assertThrows(NoSuchElementException.class, arrayDeque::removeFirst);
+        assertThrows(NoSuchElementException.class, arrayDeque::removeLast);
+        assertThrows(NoSuchElementException.class, arrayDeque::element);
+        assertThrows(NoSuchElementException.class, arrayDeque::remove);
+        assertNull(arrayDeque.peek());
+        assertNull(arrayDeque.poll());
+
+        arrayDeque.push("1");
+        arrayDeque.push("2");
+        arrayDeque.push("3");
+
+        assertEquals("3", arrayDeque.pop());
+        assertEquals(String.valueOf(2), arrayDeque.pop());
+        assertEquals("1", arrayDeque.pop());
+
+        System.out.println(arrayDeque);
+
+
     }
+
+
 }
