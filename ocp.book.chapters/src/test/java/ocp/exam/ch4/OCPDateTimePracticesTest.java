@@ -3,6 +3,7 @@ package ocp.exam.ch4;
 import org.junit.jupiter.api.Test;
 
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,7 +37,31 @@ class OCPDateTimePracticesTest {
         assertEquals("-05:00", second.getOffset().toString());
         assertEquals(2, second.getHour());
         assertEquals(30, second.getMinute());
+    }
 
+    @Test
+    public void testBetween() {
+        var date = LocalDate.of(2023, Month.NOVEMBER, 5);
+        var time = LocalTime.of(1 ,30);
+        var dateTime1 = ZonedDateTime.of(date, time, ZoneId.of("US/Eastern"));
+        ZonedDateTime dateTime2 = dateTime1.plus(1, ChronoUnit.HOURS);
+        long actual = ChronoUnit.HOURS.between(dateTime1, dateTime2);
+        assertEquals(1, actual);
+
+        System.out.println(dateTime1);
+        System.out.println(dateTime2);
+
+        System.out.println("===");
+
+        date = LocalDate.of(2023, Month.MARCH, 12);
+        time = LocalTime.of(1, 30);
+        dateTime1 = ZonedDateTime.of(date, time, ZoneId.of("US/Eastern"));
+        dateTime2 = dateTime1.plus(1L, ChronoUnit.HOURS);
+        actual = ChronoUnit.HOURS.between(dateTime1, dateTime2);
+        assertEquals(1, actual);
+
+        System.out.println(dateTime1);
+        System.out.println(dateTime2);
 
     }
 }
