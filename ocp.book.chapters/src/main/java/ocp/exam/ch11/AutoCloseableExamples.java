@@ -40,6 +40,25 @@ public class AutoCloseableExamples {
         }
     }
 
+    public void example4() {
+        try(var res1 = new NaughtyARMResource(() -> new RuntimeException("from resource: " + 1), 1);
+            var res2 = new NaughtyARMResource(() -> new RuntimeException("from resource: " + 2), 2);
+            var res3 = new NaughtyARMResource(() -> new Exception("from resource: " + 3), 3)
+        ) {
+            throw new RuntimeException("from try block");
+        } catch (RuntimeException e) {
+            throw e;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally {
+            System.out.println("finally block");
+//            throw new RuntimeException("from finally");
+        }
+//        System.out.println("end of example");
+    }
+
     public static void main(String[] args) {
         AutoCloseableExamples examples = new AutoCloseableExamples();
 //        examples.example1();
