@@ -56,6 +56,9 @@ class OCPStringManipulationExampleTest {
                 ewe
                 sheep\t""", base.translateEscapes());
 
+        assertEquals(5, """
+                sss\s
+                """.length());
 
     }
 
@@ -73,4 +76,18 @@ class OCPStringManipulationExampleTest {
         assertTrue("Hello".intern() != t);
     }
 
+    @Test
+    public void test() {
+        int y = 0;
+        var x = """
+                y = " " ' \"
+                x =\s""" + y + """
+                esc \"""
+                
+                a
+                
+                """;
+        System.out.println(x);
+        System.out.println("===");
+    }
 }

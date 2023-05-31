@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.*;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.UnsupportedTemporalTypeException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -62,6 +63,15 @@ class OCPDateTimePracticesTest {
 
         System.out.println(dateTime1);
         System.out.println(dateTime2);
+
+    }
+
+    @Test
+    public void dateTimeMethods() {
+        LocalDate localDate = LocalDate.now();
+//        localDate.plus()
+        assertThrows(UnsupportedTemporalTypeException.class, () -> localDate.plus(2, ChronoUnit.HOURS));
+        assertEquals(2024, localDate.plusYears(1).getYear());
 
     }
 }
